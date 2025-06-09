@@ -1,0 +1,63 @@
+{ ... }: {
+  programs.fastfetch = {
+    enable = true;
+    settings = {
+      logo = {
+        type = "small";
+        color = {
+          "2" = "white";
+          "1" = "cyan";
+        };
+      };
+      display = { separator = " "; };
+
+      modules = [
+        {
+          "type" = "custom";
+          "format" = "{#35}╭──────────────────────────────────────────╮";
+        }
+        {
+          "type" = "os";
+          "key" = "{#35}│ {#34} ";
+          "keyColor" = "blue";
+        }
+        {
+          "type" = "kernel";
+          "key" = "{#35}│ {#34} ";
+          "keyColor" = "blue";
+        }
+        {
+          "type" = "uptime";
+          "key" = "{#35}│ {#34} ";
+          "keyColor" = "blue";
+        }
+        {
+          "type" = "shell";
+          "key" = "{#35}│ {#34} ";
+          "keyColor" = "blue";
+        }
+        {
+          "type" = "wm";
+          "key" = "{#35}│ {#34} ";
+          "keyColor" = "blue";
+        }
+        {
+          "type" = "memory";
+          "key" = "{#35}│ {#34} ";
+          "keyColor" = "blue";
+        }
+        {
+          "type" = "cpu";
+          "key" = "{#35}│ {#34}󰍛 ";
+          "keyColor" = "blue";
+          "format" = "{freq-max} - {cores-logical} cores {#34}";
+        }
+        {
+          "type" = "custom";
+          "format" =
+            "{#35}╰───────────────────── {#90} {#31} {#32} {#33} {#34} {#35} {#36} {#37} {#35}────╯";
+        }
+      ];
+    };
+  };
+}
