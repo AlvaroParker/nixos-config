@@ -94,7 +94,7 @@
     isNormalUser = true;
     description = "${args.nickName}";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "video" "kvm"];
     # packages = with pkgs; [];
   };
 
@@ -104,6 +104,8 @@
   programs.zsh.enable = true;
 
   programs.hyprland.enable = true;
+
+  programs.virt-manager.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -123,7 +125,29 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     xdg-desktop-portal-hyprland
+
+    qemu
+    qemu_full
+    bridge-utils
   ];
+
+  virtualisation.spiceUSBRedirection.enable = true;
+
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [(pkgs.OVMF.override {
+          secureBoot = true;
+          tpmSupport = true;
+        }).fd];
+      };
+    };
+  };
 
   services.openssh = {
     enable = true;
