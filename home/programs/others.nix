@@ -21,11 +21,11 @@
     obs-studio
     spotify
     inkscape
-    minecraft
+    # minecraft
     authenticator
     wdisplays
     postman
-    ventoy
+    # ventoy # not trusted
     gdm-settings
     protonvpn-gui
     scrcpy
