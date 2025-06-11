@@ -18,3 +18,12 @@ rec {
 ```
 
 Valid `hostname` values are `huawei`, `thinkpad` and `nixvm`. If you want to add your own, you can do so by adding a new entry in `flake.nix` and under `sysetm/`.
+
+## Screenshots
+
+![S4](screenshots/S4.webp)
+![S5](screenshots/S5.webp)
+![S3](screenshots/S3.webp)
+![S1](screenshots/S1.webp)
+![S2](screenshots/S2.webp)
+![S6](screenshots/S6.webp)
