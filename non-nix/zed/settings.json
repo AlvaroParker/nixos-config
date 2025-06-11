@@ -1,0 +1,237 @@
+{
+  "ssh_connections": [
+    {
+      "host": "192.168.122.11",
+      "username": "root",
+      "projects": [
+        {
+          "paths": ["/etc/nixos"]
+        }
+      ]
+    },
+    {
+      "host": "192.168.122.11",
+      "username": "parker",
+      "projects": [
+        {
+          "paths": ["/home/parker/github/nixos-config"]
+        }
+      ]
+    },
+    {
+      "host": "192.168.68.113",
+      "username": "parker",
+      "projects": [
+        {
+          "paths": ["/home/parker/nixos-config"]
+        }
+      ]
+    }
+  ],
+  "minimap": {
+    "show": "always",
+    "display_scope": "focused_pane",
+    "thumb": "hover"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Material Icon Theme",
+    "dark": "Catppuccin Mocha"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "soft_wrap": "editor_width",
+  "file_types": {
+    "XML": ["*.csproj"]
+  },
+  "show_edit_predictions": true,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
+  },
+  "agent": {
+    // "default_view": "text_thread",
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
+    },
+    "version": "2"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "tabs": {
+    "git_status": true,
+    "file_icons": true
+  },
+  "terminal": {
+    "dock": "bottom",
+    "default_height": 250
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff", "pyright"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        },
+        {
+          "code_actions": {
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
+          }
+        }
+      ]
+    },
+    "Markdown": {
+      "soft_wrap": "editor_width"
+    },
+    "TypeScript": {
+      "show_edit_predictions": true,
+      "tab_size": 4
+    },
+    "Rust": {
+      "show_edit_predictions": false
+    },
+    "C": {
+      "formatter": {
+        "external": {
+          "command": "bash",
+          "arguments": ["-c", "clang-format"]
+        }
+      },
+      "format_on_save": "on"
+    },
+    "C++": {
+      "formatter": {
+        "external": {
+          "command": "bash",
+          "arguments": ["-c", "clang-format"]
+        }
+      },
+      "tab_size": 2,
+      "format_on_save": "off"
+    }
+  },
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "ui_font_family": "FiraCode Nerd Font",
+  "ui_font_weight": 700,
+  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_weight": 600,
+  "ui_font_size": 15,
+  "scrollbar": {
+    "show": "never"
+  },
+
+  "buffer_font_size": 13,
+  "format_on_save": "on",
+  "file_scan_exclusions": [".next", ".turbo", "node_modules", "dist"],
+  "project_panel": {
+    "dock": "left",
+    "indent_size": 15,
+    "scrollbar": {
+      "show": "never"
+    },
+    "hide_gitignore": false
+  },
+  "lsp": {
+    "nil": {
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        // "checkOnSave": {},
+        "completion": {
+          "snippets": {
+            "custom": {
+              "Arc::new": {
+                "postfix": "arc",
+                "body": ["Arc::new(${receiver})"],
+                "requires": "std::sync::Arc",
+                "scope": "expr"
+              },
+              "Some": {
+                "postfix": "some",
+                "body": ["Some(${receiver})"],
+                "scope": "expr"
+              },
+              "Ok": {
+                "postfix": "ok",
+                "body": ["Ok(${receiver})"],
+                "scope": "expr"
+              },
+              "Rc::new": {
+                "postfix": "rc",
+                "body": ["Rc::new(${receiver})"],
+                "requires": "std::rc::Rc",
+                "scope": "expr"
+              },
+              "Box::pin": {
+                "postfix": "boxpin",
+                "body": ["Box::pin(${receiver})"],
+                "requires": "std::boxed::Box",
+                "scope": "expr"
+              },
+              "vec!": {
+                "postfix": "vec",
+                "body": ["vec![${receiver}]"],
+                "description": "vec![]",
+                "scope": "expr"
+              }
+            }
+          }
+        }
+      }
+    },
+    "pyright": {
+      "settings": {
+        "analysis": {
+          "autoSearchPaths": true,
+          "useLibraryCodeForTypes": true,
+          "typeCheckingMode": "strict",
+          "reportUnusedVariable": "warning"
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          // Ruff server settings goes here
+          // "lineLength": 120,
+          "lint": {
+            "extendSelect": [
+              // Recommended rules for Python linting
+              "I", // isort (sorts imports)
+              "ARG", // flake8-unused-arguments detects unused arguments in functions
+              "F841", // Warn about unused variables
+              "E", // Pycodestyle errors (style issues like indentation, whitespace, etc.)
+              "F", // Pyflakes rules (includes F841 for unused variables, and other common Python errors)
+              "W", // Pycodestyle warnings (like line breaks before binary operators)
+              "C90", // Pylint rules for cyclomatic complexity and code structure
+              "N", // PEP8 Naming conventions
+              "B", // Bugbear (detects potential code issues like mutable default arguments)
+              "A" // flake8-builtins (detects misuse of Python built-ins like `list`, `dict`, etc.)
+            ]
+          }
+        }
+      }
+    }
+  }
+}

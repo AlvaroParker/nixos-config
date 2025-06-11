@@ -1,0 +1,52 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-enter": "terminal_panel::ToggleFocus",
+      "ctrl-shift-t": "workspace::NewTerminal",
+      "ctrl-9": "project_panel::ToggleFocus",
+      "ctrl-shift-backspace": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-shift-enter": "terminal_panel::ToggleFocus",
+      "ctrl-shift-t": "workspace::NewTerminal",
+      "space b": "workspace::ToggleLeftDock",
+      "space p": "workspace::ToggleRightDock",
+      "space enter": "workspace::ToggleBottomDock",
+      "ctrl-shift-l": "vim::ResizePaneRight",
+      "ctrl-shift-h": "vim::ResizePaneLeft",
+      "ctrl-shift-j": "vim::ResizePaneDown",
+      "ctrl-shift-k": "vim::ResizePaneUp"
+    }
+  },
+  {
+    "context": "vim_mode == visual"
+  },
+  {
+    "context": "Editor && vim_mode == visual || vim_mode == normal",
+    "bindings": {
+      "space /": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-k l": "pane::SplitRight",
+      "ctrl-k h": "pane::SplitRight",
+      "ctrl-k j": "pane::SplitDown",
+      "ctrl-k k": "pane::SplitUp"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w l": "agent::FocusRight",
+      "ctrl-w h": "agent::FocusLeft",
+      "ctrl-w j": "agent::FocusDown",
+      "ctrl-w k": "agent::FocusUp"
+    }
+  }
+]
