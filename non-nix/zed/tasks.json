@@ -1,0 +1,15 @@
+[
+  {
+    "label": "File Finder",
+    "command": "zed \"$(tv files)\"",
+    "shell": {
+      "program": "sh"
+    },
+    "reveal_target": "center",
+    "show_summary": false,
+    "show_output": false,
+    "show_command": false,
+    "allow_concurrent_runs": true,
+    "use_new_terminal": true
+  }
+]
