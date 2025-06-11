@@ -14,6 +14,22 @@
     grim
     slurp
 
+    # Software
+    stremio
+    obsidian
+    libreoffice
+    obs-studio
+    spotify
+    inkscape
+    minecraft
+    authenticator
+    wdisplays
+    postman
+    ventoy
+    gdm-settings
+    protonvpn-gui
+    scrcpy
+
     inputs.zen-browser.packages."${system}".default
   ];
 
