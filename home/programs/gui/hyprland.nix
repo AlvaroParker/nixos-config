@@ -1,14 +1,16 @@
-{ pkgs, ... }: {
+{ pkgs, unstable, ... }: {
   home.packages = with pkgs; [
     hyprpaper
     blueman
     networkmanagerapplet
-    hyprsunset
+    unstable.hyprsunset
     nwg-look
     hypridle
 
-    phinger-cursors
+    bibata-cursors
     reversal-icon-theme
+
+    unstable.hyprshade
   ];
   home.file.".config/hypr" = {
     source = ./config/hypr;
@@ -17,9 +19,11 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.phinger-cursors;
-    name = "phinger-cursors-dark";
-    size = 24;
+    x11.enable = true;
+
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 22;
   };
 
   dconf = {
@@ -39,6 +43,7 @@
   };
 
   wayland.windowManager.hyprland = {
+    package = unstable.hyprland;
     enable = true;
     extraConfig = ''
       # RESIZE
@@ -53,12 +58,15 @@
 
       bind =,escape,submap,reset # use reset to go back to the global submap
 
+      exec = hyprshade on $HOME/.config/hypr/saturation.glsl.mustache
+
       submap=reset # will reset the submap
     '';
     settings = {
       monitor = [
+        "desc:Samsung Electric Company LS27C33xG H9TX400275, 1920x1080@100, auto, 1"
         " , preferred, auto, 1"
-        "eDP-1, 1920x1080, 0x0, 1.25, vrr, 1"
+        "eDP-1, 3072x1920@120, 0x0,2, vrr, 1"
         "Virtual-1,1920x1080,auto,1"
       ];
       bindl = [
@@ -153,7 +161,7 @@
           "specialWorkspace,1,5,default, slidevert"
           "windowsIn,1,7,parnim,popin"
           "windowsOut,1,7,parnim,popin"
-          "windowsMove,1,7,bounce,slide"
+          "windowsMove,1,7,bounce,gnomed"
         ];
       };
 
@@ -168,10 +176,10 @@
       };
 
       env = [
-        "XCURSOR_THEME,phinger-cursors-dark"
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_THEME,phinger-cursors-dark"
-        "HYPRCURSOR_SIZE,24"
+        "XCURSOR_THEME,Bibata-Modern-Classic"
+        "XCURSOR_SIZE,22"
+        "HYPRCURSOR_THEME,Bibata-Modern-Classic"
+        "HYPRCURSOR_SIZE,22"
       ];
       workspace = [
         "special:pocket, monitor:HDMI-A-1, default:true"
@@ -182,6 +190,7 @@
 
       windowrule = [
         "opacity 0.0 override,class:^(xwaylandvideobridge)$"
+        "noanim, initialclass:^(ueberzugpp)"
         "noanim,class:^(xwaylandvideobridge)$"
         "noinitialfocus,class:^(xwaylandvideobridge)$"
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
@@ -191,20 +200,16 @@
         "float,class:(clipse)"
         "size 622 652,class:(clipse)"
       ];
-      layerrule = [ "unset,rofi" "noanim,rofi" ];
+      layerrule =
+        [ "unset,rofi" "noanim,rofi" "unset,ueberzugpp" "noanim,ueberzugpp" ];
 
       exec-once = [
         "swaync"
         "hyprsunset"
         "waybar"
         "blueman-applet"
-        "swayosd-server"
         "nm-applet"
-        "systemctl --user start hyprpolkitagent"
-        "hyprpaper"
-        ''hyprctl setcursor "phinger-cursors-dark" 24''
-        "hypridle"
-        "clipse -listen"
+        ''hyprctl setcursor "Bibata-Modern-Classic" 22''
       ];
       binde = [
         "$mainMod SHIFT, Tab, workspace, m-1"
@@ -239,8 +244,8 @@
         "SUPER,F,fullscreen"
         "$mainMod SHIFT, F, fullscreenstate, 2, 0"
         "$mainMod, x,togglegroup"
-        "$mainMod, h, changegroupactive, b"
-        "$mainMod, l, changegroupactive, f"
+        "$mainMod ctrl, h, changegroupactive, b"
+        "$mainMod ctrl, l, changegroupactive, f"
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -253,8 +258,8 @@
         "$mainMod, 0, workspace, 10"
         "$mainMod SHIFT, C, movetoworkspace, special:pocket"
         "$mainMod, C, togglespecialworkspace, pocket"
-        "$mainMod SHIFT, code:21, movetoworkspace, special:aux"
-        "$mainMod, code:21, togglespecialworkspace, aux"
+        "$mainMod SHIFT, O, movetoworkspace, special:aux"
+        "$mainMod, O, togglespecialworkspace, aux"
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -269,13 +274,11 @@
         "$mainMod, mouse_up, workspace, e-1"
         "$mainMod, return, exec, alacritty"
         "$mainMod SHIFT, return, exec, alacritty -e ~/.local/bin/auto_tmux"
-        "$mainMod, E, exec, nautilus"
+        "$mainMod, E, exec, alacritty -e yazi"
         "$mainMod, D, exec, rofi -show drun"
         "$mainMod, I, exec, zen"
         "$mainMod SHIFT, N, exec, hyprctl hyprsunset temperature 3500"
         "$mainMod SHIFT, M, exec,hyprctl hyprsunset identity"
-        "$mainMod SHIFT, O, exec, $HOME/.config/hypr/switch_monitor"
-        "$mainMod SHIFT, P, exec, hyprlock"
         "$mainMod SHIFT, W, exec, hyprlock"
         "$mainMod, N, exec, swaync-client --toggle-panel"
         "$mainMod,XF86MonBrightnessUp,exec,light -S 100"
@@ -296,8 +299,6 @@
       ];
     };
   };
-
-  services.hyprsunset.enable = true;
 
   services.hypridle = {
     enable = true;
@@ -321,7 +322,7 @@
     settings = {
 
       source = "$HOME/.cache/wal/colors-hyprland.conf";
-      monitor = "eDP-1, 3072x1920, 0x0,2, vrr, 1";
+      monitor = [ "eDP-1, 3072x1920, 0x0,2, vrr, 2" ",preferred, auto, 1" ];
 
       auth = { fingerprint = { enabled = true; }; };
 
@@ -399,8 +400,8 @@
       ];
     };
   };
-  services.blueman-applet.enable = true;
-  services.network-manager-applet.enable = true;
+  # services.blueman-applet.enable = true;
+  # services.network-manager-applet.enable = true;
   services.swayosd.enable = true;
   services.hyprpolkitagent.enable = true;
   services.clipse.enable = true;

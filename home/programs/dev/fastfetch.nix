@@ -3,10 +3,14 @@
     enable = true;
     settings = {
       logo = {
-        type = "small";
+        source = "nixos_old_small";
         color = {
+          "1" = "bright_blue";
           "2" = "white";
-          "1" = "cyan";
+        };
+        padding = {
+          top = 1;
+          left = 3;
         };
       };
       display = { separator = " "; };
