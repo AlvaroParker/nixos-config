@@ -20,7 +20,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, lanzaboote, ... }@inputs:
+  outputs =
+    { self, nixpkgs, home-manager, zen-browser, lanzaboote, ... }@inputs:
     let vars = import ./vars.nix;
     in {
       nixosConfigurations.nixvm = nixpkgs.lib.nixosSystem {
