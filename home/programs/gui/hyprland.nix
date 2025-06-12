@@ -58,7 +58,7 @@
     settings = {
       monitor = [
         " , preferred, auto, 1"
-        "eDP-1, 1920x1080, 0x0, 1.25, vrr, 1"
+        "eDP-1, 3072x1920@120, 0x0,2, vrr, 1"
         "Virtual-1,1920x1080,auto,1"
       ];
       bindl = [

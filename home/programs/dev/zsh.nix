@@ -16,7 +16,7 @@
       alias graph='git log --oneline --graph --all --decorate'
       alias sudo='sudo -A'
       alias vim='nvim'
-      # alias zed='zeditor'
+      alias zed='zeditor'
       export SUDO_ASKPASS=$(which systemd-ask-password)
 
       # Key bindings
@@ -24,6 +24,7 @@
       bindkey '^F' forward-char
       bindkey "^P" up-line-or-beginning-search
       bindkey "^N" down-line-or-beginning-search
+      export PATH=$HOME/.local/bin:$PATH
     '';
     oh-my-zsh = {
       enable = true;

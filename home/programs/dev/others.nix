@@ -5,7 +5,10 @@
     nixd
     nil
     rustup
-    gcc
+    clang
+    clang-tools
+    cmake
+    gnumake
     nodejs
     docker-compose
     (pkgs.python3.withPackages
@@ -15,7 +18,7 @@
     firefox-devedition
     firefox
   ];
-  # programs.zed-editor = { enable = true; };
+  programs.zed-editor = { enable = true; };
   programs.vscode = { enable = true; };
   programs.ripgrep = { enable = true; };
 }
