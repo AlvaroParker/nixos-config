@@ -11,9 +11,16 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, zen-browser, lanzaboote, ... }@inputs:
     let vars = import ./vars.nix;
     in {
       nixosConfigurations.nixvm = nixpkgs.lib.nixosSystem {
@@ -77,7 +84,10 @@
           inherit inputs;
         };
         modules = [
+          lanzaboote.nixosModules.lanzaboote
+
           ./system/thinkpad
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
