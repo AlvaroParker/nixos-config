@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1749727998,
+        "narHash": "sha256-mHv/yeUbmL91/TvV95p+mBVahm9mdQMJoqaTVTALaFw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "fd487183437963a59ba763c0cc4f27e3447dd6dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "old-prisma-nixpkgs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731312525,
+        "narHash": "sha256-joiQsjCJzH+F8uwLnFjYkAW7jN+Eo9OzajPHgwYt1W0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c57fe374c322a1adbf35a3a89fda854930fdc445",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c57fe374c322a1adbf35a3a89fda854930fdc445",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "old-prisma-nixpkgs": "old-prisma-nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

@@ -1,3 +1,5 @@
+![S7](screenshots/S7.webp)
+
 # NixOS configuration
 
 You'll need to modify the `vars.nix` file in the root directory of this repo with the following content:

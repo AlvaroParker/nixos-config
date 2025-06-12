@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, unstable, inputs, ... }: {
   home.packages = with pkgs; [
     discord
     pavucontrol
@@ -31,18 +31,53 @@
     scrcpy
 
     inputs.zen-browser.packages."${system}".default
+
+    # For yazi
+    mediainfo
+    ueberzugpp
+    exiftool
+
+    shellcheck
+    shfmt
+
+    snes9x
+    snes9x-gtk
+    dolphin-emu
+    authenticator
+
+    obsidian
+    unstable.ollama
+    check-jsonschema
+    perl
+
+    jetbrains.clion
+
+    caddy
   ];
 
-  xdg.desktopEntries.discord-wayland = {
-    name = "Discord (Wayland)";
-    genericName = "Internet Messenger";
-    comment =
-      "All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.";
-    exec =
-      "/etc/profiles/per-user/parker/bin/discord --ozone-platform-hint=auto";
-    icon = "discord";
-    type = "Application";
-    categories = [ "Network" "InstantMessaging" ];
+  xdg.desktopEntries = {
+    discord-wayland = {
+      name = "Discord (Wayland)";
+      genericName = "Internet Messenger";
+      comment =
+        "All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.";
+      exec =
+        "/etc/profiles/per-user/parker/bin/discord --ozone-platform-hint=auto";
+      icon = "discord";
+      type = "Application";
+      categories = [ "Network" "InstantMessaging" ];
+    };
+
+    obsidian-wayland = {
+      categories = [ "Office" ];
+      comment = "Knowledge base";
+      exec =
+        "/etc/profiles/per-user/parker/bin/obsidian  --ozone-platform-hint=auto";
+      icon = "obsidian";
+      mimeType = [ "x-scheme-handler/obsidian" ];
+      name = "Obsidian (Wayland)";
+      type = "Application";
+    };
   };
 
   services.clipse.enable = true;
@@ -52,8 +87,23 @@
     executable = true;
   };
 
+  programs.thunderbird = {
+    enable = true;
+    profiles = { default = { isDefault = true; }; };
+  };
+
   programs.yazi = {
     enable = true;
+    enableZshIntegration = true;
+    settings = {
+      opener = {
+        play = [{
+          run = ''vlc \"$@\"'';
+          desc = "VLC";
+          orphan = true;
+        }];
+      };
+    };
   };
 
   programs.zathura = {
