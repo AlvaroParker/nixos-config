@@ -52,6 +52,10 @@
     executable = true;
   };
 
+  programs.yazi = {
+    enable = true;
+  };
+
   programs.zathura = {
     enable = true;
     mappings = {
