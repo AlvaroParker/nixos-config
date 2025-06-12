@@ -269,7 +269,7 @@
         "$mainMod, mouse_up, workspace, e-1"
         "$mainMod, return, exec, alacritty"
         "$mainMod SHIFT, return, exec, alacritty -e ~/.local/bin/auto_tmux"
-        "$mainMod, E, exec, nautilus"
+        "$mainMod, E, exec, yazi"
         "$mainMod, D, exec, rofi -show drun"
         "$mainMod, I, exec, zen"
         "$mainMod SHIFT, N, exec, hyprctl hyprsunset temperature 3500"
