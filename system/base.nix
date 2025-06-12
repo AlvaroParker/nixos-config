@@ -90,7 +90,8 @@
     isNormalUser = true;
     description = "${args.nickName}";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "video" "kvm"];
+    extraGroups =
+      [ "networkmanager" "wheel" "docker" "libvirtd" "video" "kvm" ];
     # packages = with pkgs; [];
   };
 
@@ -117,6 +118,10 @@
     mesa
     gnome-tweaks
     gnome-themes-extra
+
+    pciutils
+    mlocate
+
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
@@ -137,10 +142,12 @@
       swtpm.enable = true;
       ovmf = {
         enable = true;
-        packages = [(pkgs.OVMF.override {
-          secureBoot = true;
-          tpmSupport = true;
-        }).fd];
+        packages = [
+          (pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd
+        ];
       };
     };
   };
