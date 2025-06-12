@@ -6,18 +6,30 @@
 
 {
   # Bootloader.
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_zen;
+    plymouth = {
+      enable = true;
+      theme = "bgrt";
+    };
+    # Enable "Silent boot"
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    initrd.systemd.enable = true;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
+    ];
+  };
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelParams = [ "quiet" "splash" ];
-  boot.plymouth = {
-    enable = true;
-    theme = "spinner";
-  };
 
   networking.hostName = "${args.hostname}"; # Define your hostname.
 

@@ -1,4 +1,4 @@
-{ pkgs, lib, lanzaboote, ... }: {
+{ pkgs, lib, ... }: {
   imports = [ ./hardware-configuration.nix ./../base.nix ];
 
   environment.systemPackages = with pkgs; [ sbctl ];
