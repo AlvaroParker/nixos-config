@@ -15,7 +15,7 @@
     firefox-devedition
     firefox
   ];
-  programs.zed-editor = { enable = true; };
+  # programs.zed-editor = { enable = true; };
   programs.vscode = { enable = true; };
   programs.ripgrep = { enable = true; };
 }

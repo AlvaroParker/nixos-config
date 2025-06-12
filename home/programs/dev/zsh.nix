@@ -16,7 +16,7 @@
       alias graph='git log --oneline --graph --all --decorate'
       alias sudo='sudo -A'
       alias vim='nvim'
-      alias zed='zeditor'
+      # alias zed='zeditor'
       export SUDO_ASKPASS=$(which systemd-ask-password)
 
       # Key bindings
