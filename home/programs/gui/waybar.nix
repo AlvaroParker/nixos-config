@@ -8,6 +8,7 @@
 
   programs.waybar = {
     enable = true;
+    systemd.enable = false;
     style = pkgs.lib.readFile ./config/waybar/style.css;
     settings = [{
       layer = "top";

@@ -200,11 +200,7 @@
         "blueman-applet"
         "swayosd-server"
         "nm-applet"
-        "systemctl --user start hyprpolkitagent"
-        "hyprpaper"
         ''hyprctl setcursor "phinger-cursors-dark" 24''
-        "hypridle"
-        "clipse -listen"
       ];
       binde = [
         "$mainMod SHIFT, Tab, workspace, m-1"
@@ -296,8 +292,6 @@
       ];
     };
   };
-
-  services.hyprsunset.enable = true;
 
   services.hypridle = {
     enable = true;
@@ -399,8 +393,8 @@
       ];
     };
   };
-  services.blueman-applet.enable = true;
-  services.network-manager-applet.enable = true;
+  # services.blueman-applet.enable = true;
+  # services.network-manager-applet.enable = true;
   services.swayosd.enable = true;
   services.hyprpolkitagent.enable = true;
   services.clipse.enable = true;
