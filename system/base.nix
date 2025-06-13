@@ -50,6 +50,32 @@
     excludePackages = [ pkgs.xterm ];
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gnome
+    ];
+    config = {
+      common = { default = [ "gtk" ]; };
+      hyprland = { default = [ "hyprland" "gtk" ]; };
+      gnome = { default = [ "gnome" "gtk" ]; };
+    };
+  };
+  systemd.services.wpa_supplicant.environment.OPENSSL_CONF =
+    pkgs.writeText "openssl.cnf" ''
+      openssl_conf = openssl_init
+      [openssl_init]
+      ssl_conf = ssl_sect
+      [ssl_sect]
+      system_default = system_default_sect
+      [system_default_sect]
+      Options = UnsafeLegacyRenegotiation
+      [system_default_sect]
+      CipherString = Default:@SECLEVEL=0
+    '';
+
   environment.gnome.excludePackages = (with pkgs; [
     atomix # puzzle game
     cheese # webcam tool
