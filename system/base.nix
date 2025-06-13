@@ -8,7 +8,7 @@
   # Bootloader.
   boot = {
     loader.efi.canTouchEfiVariables = true;
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
     plymouth = {
       enable = true;
       theme = "bgrt";
@@ -80,6 +80,7 @@
     simple-scan
     decibels
     snapshot
+    xdg-desktop-portal-gnome
   ]);
 
   # Enable CUPS to print documents.
@@ -135,8 +136,9 @@
 
     xdg-desktop-portal
     xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
     xdg-desktop-portal-hyprland
+
+    sof-firmware
 
     qemu
     qemu_full

@@ -30,7 +30,7 @@
   ],
   "minimap": {
     "show": "always",
-    "display_scope": "focused_pane",
+    "display_in": "active_editor",
     "thumb": "hover"
   },
   "features": {
