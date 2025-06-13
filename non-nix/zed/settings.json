@@ -55,7 +55,7 @@
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
+      "model": "gpt-4o"
     },
     "version": "2"
   },
@@ -147,8 +147,11 @@
   },
   "lsp": {
     "nil": {
-      "formatting": {
-        "command": ["nixfmt"]
+      // or "nixd":
+      "initialization_options": {
+        "formatting": {
+          "command": ["nixfmt"]
+        }
       }
     },
     "rust-analyzer": {

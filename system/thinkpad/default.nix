@@ -16,12 +16,12 @@
     pkiBundle = "/var/lib/sbctl";
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ vpl-gpu-rt intel-vaapi-driver ];
   };
 
   console.font = "ter-i32b";
   console.packages = with pkgs; [ terminus_font ];
-  boot.earlyVconsoleSetup = true;
+  console.earlySetup = true;
 }

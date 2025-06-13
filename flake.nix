@@ -20,63 +20,14 @@
     };
   };
 
-  outputs =
-    { self, nixpkgs, home-manager, zen-browser, lanzaboote, ... }@inputs:
-    let vars = import ./vars.nix;
+  outputs = { nixpkgs, home-manager, lanzaboote, ... }@inputs:
+    let
+      vars = import ./vars.nix;
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+
     in {
-      nixosConfigurations.nixvm = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit (vars)
-            username nickName email homeDirectory hostname timezone
-            defaultLocale;
-          inherit inputs;
-        };
-        modules = [
-          ./system/nixvm
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.useUserPackages = true;
-            home-manager.users.${vars.username} = import ./home;
-            home-manager.extraSpecialArgs = {
-              inherit (vars)
-                username nickName fullName email homeDirectory ssh_public
-                batteryName;
-              inherit inputs;
-            };
-          }
-        ];
-      };
-
-      nixosConfigurations.huawei = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit (vars)
-            username nickName email homeDirectory hostname timezone
-            defaultLocale;
-          inherit inputs;
-        };
-        modules = [
-          ./system/huawei
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.useUserPackages = true;
-            home-manager.users.${vars.username} = import ./home;
-            home-manager.extraSpecialArgs = {
-              inherit (vars)
-                username nickName fullName email homeDirectory ssh_public
-                batteryName;
-              inherit inputs;
-            };
-          }
-        ];
-      };
-
-      nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${vars.hostname} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit (vars)
@@ -87,8 +38,7 @@
         modules = [
           lanzaboote.nixosModules.lanzaboote
 
-          ./system/thinkpad
-
+          ./system/${vars.hostname}
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -104,5 +54,10 @@
           }
         ];
       };
+      devShells.${system} = {
+        nodejs = import ./shells/nodejs.nix { inherit pkgs; };
+        gcc = import ./shells/gcc.nix { inherit pkgs; };
+      };
+      formatter.${system} = pkgs.nixpkgs-fmt;
     };
 }
