@@ -1,6 +1,8 @@
 { pkgs, lib, ... }: {
   imports = [ ./hardware-configuration.nix ./../base.nix ];
 
+  hardware.enableAllFirmware = true;
+
   environment.systemPackages = with pkgs; [ sbctl ];
 
   boot.loader.systemd-boot.enable = lib.mkForce false;
