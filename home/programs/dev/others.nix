@@ -11,6 +11,9 @@
     gnumake
     nodejs
     docker-compose
+    go
+    unzip
+    openjdk
     (pkgs.python3.withPackages
       (python-pkgs: [ python-pkgs.pandas python-pkgs.requests ]))
 

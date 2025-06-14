@@ -169,6 +169,8 @@
     qemu
     qemu_full
     bridge-utils
+
+    file
   ];
 
   virtualisation.spiceUSBRedirection.enable = true;
