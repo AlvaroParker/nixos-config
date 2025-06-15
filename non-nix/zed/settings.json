@@ -131,7 +131,7 @@
   "buffer_font_weight": 600,
   "ui_font_size": 15,
   "scrollbar": {
-    "show": "never"
+    "show": "auto"
   },
 
   "buffer_font_size": 13,

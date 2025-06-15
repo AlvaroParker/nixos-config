@@ -31,6 +31,11 @@
     scrcpy
 
     inputs.zen-browser.packages."${system}".default
+
+    # For yazi
+    mediainfo
+    ueberzugpp
+    exiftool
   ];
 
   xdg.desktopEntries.discord-wayland = {
@@ -52,7 +57,19 @@
     executable = true;
   };
 
-  programs.yazi = { enable = true; };
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      opener = {
+        play = [{
+          run = ''vlc \"$@\"'';
+          desc = "VLC";
+          orphan = true;
+        }];
+      };
+    };
+  };
 
   programs.zathura = {
     enable = true;

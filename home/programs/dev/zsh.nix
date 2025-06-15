@@ -50,6 +50,8 @@
     };
   };
 
+  home.sessionVariables = { EDITOR = "nvim"; };
+
   programs.bash = {
     enable = true;
     enableCompletion = true;

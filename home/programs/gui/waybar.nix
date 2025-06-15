@@ -23,8 +23,7 @@
       modules-left =
         [ "custom/launcher" "cpu" "memory" "custom/window-name" "tray" ];
       modules-center = [ "hyprland/workspaces" ];
-      modules-right =
-        [ "custom/music" "battery" "backlight" "pulseaudio" "network" "clock" ];
+      modules-right = [ "battery" "backlight" "pulseaudio" "network" "clock" ];
       "custom/launcher" = {
         format = "";
         on-click = "rofi -show drun";

@@ -50,6 +50,8 @@
     excludePackages = [ pkgs.xterm ];
   };
 
+  # services.libinput = { enable = true; };
+
   xdg.portal = {
     enable = true;
     extraPortals = [

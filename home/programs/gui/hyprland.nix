@@ -153,7 +153,7 @@
           "specialWorkspace,1,5,default, slidevert"
           "windowsIn,1,7,parnim,popin"
           "windowsOut,1,7,parnim,popin"
-          "windowsMove,1,7,bounce,slide"
+          "windowsMove,1,7,bounce,gnomed"
         ];
       };
 
@@ -182,6 +182,7 @@
 
       windowrule = [
         "opacity 0.0 override,class:^(xwaylandvideobridge)$"
+        "noanim, initialclass:^(ueberzugpp)"
         "noanim,class:^(xwaylandvideobridge)$"
         "noinitialfocus,class:^(xwaylandvideobridge)$"
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
@@ -191,7 +192,8 @@
         "float,class:(clipse)"
         "size 622 652,class:(clipse)"
       ];
-      layerrule = [ "unset,rofi" "noanim,rofi" ];
+      layerrule =
+        [ "unset,rofi" "noanim,rofi" "unset,ueberzugpp" "noanim,ueberzugpp" ];
 
       exec-once = [
         "swaync"
@@ -315,7 +317,7 @@
     settings = {
 
       source = "$HOME/.cache/wal/colors-hyprland.conf";
-      monitor = "eDP-1, 3072x1920, 0x0,2, vrr, 1";
+      monitor = [ "eDP-1, 3072x1920, 0x0,2, vrr, 2" ",preferred, auto, 1" ];
 
       auth = { fingerprint = { enabled = true; }; };
 
