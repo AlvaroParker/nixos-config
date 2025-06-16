@@ -5,7 +5,9 @@
       "username": "root",
       "projects": [
         {
-          "paths": ["/etc/nixos"]
+          "paths": [
+            "/etc/nixos"
+          ]
         }
       ]
     },
@@ -14,7 +16,9 @@
       "username": "parker",
       "projects": [
         {
-          "paths": ["/home/parker/github/nixos-config"]
+          "paths": [
+            "/home/parker/github/nixos-config"
+          ]
         }
       ]
     },
@@ -23,7 +27,20 @@
       "username": "parker",
       "projects": [
         {
-          "paths": ["/home/parker/nixos-config"]
+          "paths": [
+            "/home/parker/nixos-config"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "localhost",
+      "username": "parker",
+      "projects": [
+        {
+          "paths": [
+            "/home/parker/test_dir2"
+          ]
         }
       ]
     }
@@ -52,10 +69,10 @@
   },
   "agent": {
     // "default_view": "text_thread",
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "model": "claude-sonnet-4"
     },
     "version": "2"
   },
