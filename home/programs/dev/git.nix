@@ -13,6 +13,7 @@
   programs.git = {
     enable = true;
     userName = fullName;
+    extraConfig = { init.defaultBranch = "main"; };
     userEmail = email;
     signing.key = "${homeDirectory}/.ssh/id_ed25519.pub";
     signing.format = "ssh";

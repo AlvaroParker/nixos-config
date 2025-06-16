@@ -5,10 +5,29 @@
     zsh-powerlevel10k
   ];
 
-  programs.lsd.enable = true;
+  programs.lsd = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      nv = "nvim";
+      tree = "eza --icons=always --tree";
+      ipinfo = "ip -br -c a";
+      graph = "git log --oneline --graph --all --decorate";
+      sudo = "sudo -A";
+      vim = "nvim";
+      zed = "zeditor";
+    };
+
+    sessionVariables = {
+      SUDO_ASKPASS = "$(which systemd-ask-password)";
+      PATH = "$HOME/.local/bin:$PATH";
+    };
+
     initContent = ''
       if [[ -z "$TMUX" ]]; then
         fastfetch
@@ -20,22 +39,11 @@
         source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
       fi
 
-      alias ls='lsd'
-      alias nv='nvim'
-      alias tree='eza --icons=always --tree'
-      alias ipinfo='ip -br -c a'
-      alias graph='git log --oneline --graph --all --decorate'
-      alias sudo='sudo -A'
-      alias vim='nvim'
-      alias zed='zeditor'
-      export SUDO_ASKPASS=$(which systemd-ask-password)
-
       # Key bindings
       bindkey -v # enable vi mode
       bindkey '^F' forward-char
       bindkey "^P" up-line-or-beginning-search
       bindkey "^N" down-line-or-beginning-search
-      export PATH=$HOME/.local/bin:$PATH
     '';
     oh-my-zsh = {
       enable = true;
@@ -55,6 +63,10 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
+    shellAliases = {
+      zed = "zeditor";
+      vim = "nvim";
+    };
   };
 
 }
