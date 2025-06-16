@@ -109,6 +109,7 @@
     decibels
     snapshot
     xdg-desktop-portal-gnome
+    speechd
   ]);
 
   # Enable CUPS to print documents.
@@ -173,6 +174,7 @@
     bridge-utils
 
     file
+    nix-index
   ];
 
   virtualisation.spiceUSBRedirection.enable = true;
