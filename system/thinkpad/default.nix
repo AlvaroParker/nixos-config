@@ -35,6 +35,21 @@
   # Enable nix-ld
   programs.nix-ld = {
     enable = true;
-    # libraries = with pkgs; [ ];
+    libraries = with pkgs; [
+      xorg.libxcb
+      libxkbcommon
+      libbsd
+      alsa-lib
+      xorg.libXau
+      xorg.libXdmcp
+      zstd
+      wayland
+      vulkan-loader
+      xkeyboard_config
+    ];
+  };
+
+  environment.variables = {
+    XKB_CONFIG_ROOT = "${pkgs.xkeyboard_config}/share/X11/xkb/";
   };
 }

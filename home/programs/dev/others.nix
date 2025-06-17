@@ -24,4 +24,9 @@
   programs.zed-editor = { enable = true; };
   programs.vscode = { enable = true; };
   programs.ripgrep = { enable = true; };
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv = { enable = true; };
+  };
 }

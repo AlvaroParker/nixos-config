@@ -20,7 +20,6 @@
       graph = "git log --oneline --graph --all --decorate";
       sudo = "sudo -A";
       vim = "nvim";
-      zed = "zeditor";
     };
 
     sessionVariables = {
@@ -63,10 +62,7 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    shellAliases = {
-      zed = "zeditor";
-      vim = "nvim";
-    };
+    shellAliases = { vim = "nvim"; };
   };
 
 }
