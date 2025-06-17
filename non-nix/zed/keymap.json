@@ -4,13 +4,15 @@
     "bindings": {
       "ctrl-shift-enter": "terminal_panel::ToggleFocus",
       "ctrl-shift-t": "workspace::NewTerminal",
-      "ctrl-9": "project_panel::ToggleFocus",
       "ctrl-shift-backspace": "workspace::ToggleZoom"
     }
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "space f": "project_panel::ToggleFocus",
+      "space g": "git_panel::ToggleFocus",
+      "space o": "outline_panel::ToggleFocus",
       "ctrl-shift-enter": "terminal_panel::ToggleFocus",
       "ctrl-shift-t": "workspace::NewTerminal",
       "space b": "workspace::ToggleLeftDock",
