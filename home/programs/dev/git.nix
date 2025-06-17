@@ -24,6 +24,8 @@
     };
   };
 
+  programs.jujutsu.enable = true;
+
   home.file.".config/git/allowed_signers" = {
     text = ''
       ${fullName} <${email}> <${ssh_public}>
