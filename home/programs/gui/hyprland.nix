@@ -7,7 +7,7 @@
     nwg-look
     hypridle
 
-    phinger-cursors
+    bibata-cursors
     reversal-icon-theme
   ];
   home.file.".config/hypr" = {
@@ -17,9 +17,11 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.phinger-cursors;
-    name = "phinger-cursors-dark";
-    size = 24;
+    x11.enable = true;
+
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 22;
   };
 
   dconf = {
@@ -168,10 +170,10 @@
       };
 
       env = [
-        "XCURSOR_THEME,phinger-cursors-dark"
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_THEME,phinger-cursors-dark"
-        "HYPRCURSOR_SIZE,24"
+        "XCURSOR_THEME,Bibata-Modern-Classic"
+        "XCURSOR_SIZE,22"
+        "HYPRCURSOR_THEME,Bibata-Modern-Classic"
+        "HYPRCURSOR_SIZE,22"
       ];
       workspace = [
         "special:pocket, monitor:HDMI-A-1, default:true"
@@ -202,7 +204,7 @@
         "blueman-applet"
         "swayosd-server"
         "nm-applet"
-        ''hyprctl setcursor "phinger-cursors-dark" 24''
+        ''hyprctl setcursor "Bibata-Modern-Classic" 22''
       ];
       binde = [
         "$mainMod SHIFT, Tab, workspace, m-1"
