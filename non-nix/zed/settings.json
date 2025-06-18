@@ -54,10 +54,13 @@
     "XML": ["*.csproj"]
   },
   "show_edit_predictions": true,
+  "edit_predictions": {
+    "mode": "subtle"
+  },
   "theme": "Catppuccin Macchiato - No Italics",
   "agent": {
     // "default_view": "text_thread",
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-3.7-sonnet"
@@ -148,7 +151,7 @@
     "scrollbar": {
       "show": "never"
     },
-    "hide_gitignore": false
+    "hide_gitignore": true
   },
   "lsp": {
     "nil": {
