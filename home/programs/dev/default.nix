@@ -43,6 +43,9 @@
       set-window-option -g pane-base-index 1
       set-option -g renumber-windows on
 
+      bind a new-session -c "#{pane_current_path}"
+      bind m attach-session -c "#{pane_current_path}"
+
       # Configure the catppuccin plugin
       set -g @catppuccin_flavor "mocha"
     '';

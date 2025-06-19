@@ -36,6 +36,7 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
+      openssl
       xorg.libxcb
       libxkbcommon
       libbsd

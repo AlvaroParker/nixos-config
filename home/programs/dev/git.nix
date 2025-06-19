@@ -20,10 +20,11 @@
     signing.signByDefault = true;
     delta = { enable = true; };
     aliases = {
-      st = "status";
+      st = "status --short --branch";
+      plog = "log --oneline --shortstat --decorate";
       co = "checkout";
       br = "branch";
-      cm = "commit";
+      cm = "commit -m";
       df = "diff";
       lg = "log --oneline --graph --decorate --all";
       last = "log -1 HEAD";

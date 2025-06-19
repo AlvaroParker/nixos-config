@@ -40,7 +40,7 @@
   "minimap": {
     "show": "always",
     "display_in": "active_editor",
-    "thumb": "hover"
+    "thumb": "always"
   },
   "features": {
     "edit_prediction_provider": "copilot"
