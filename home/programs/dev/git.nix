@@ -10,6 +10,8 @@
     executable = false;
   };
 
+  programs.gpg = { enable = true; };
+
   programs.git = {
     enable = true;
     userName = fullName;
@@ -21,7 +23,12 @@
     delta = { enable = true; };
     aliases = {
       st = "status --short --branch";
-      plog = "log --oneline --shortstat --decorate";
+      plog = ''
+        log --oneline --decorate --shortstat --color=always --pretty=format:"%C(auto)%h %d %s %Cgreen[%an]"'';
+      recent = ''
+        log --oneline  --decorate=short --shortstat --color=always --date=relative --pretty=format:"%C(auto)%h %C(auto)%d %s %n %C(yellow) └─> %Cgreen[%an] %C(bold blue)(%ad) %C(yellow)" -10'';
+      nice-log = ''
+        log --oneline  --decorate=short --shortstat --color=always --date=relative --pretty=format:"%C(auto)%h %C(auto)%d %s %n %C(yellow) └─> %Cgreen[%an] %C(bold blue)(%ad) %C(yellow)"'';
       co = "checkout";
       br = "branch";
       cm = "commit -m";
@@ -35,6 +42,8 @@
     extraConfig = {
       gpg.ssh.allowedSignersFile =
         "${homeDirectory}/.config/git/allowed_signers";
+      pull.rebase = true;
+      rerere.enabled = true;
     };
   };
 

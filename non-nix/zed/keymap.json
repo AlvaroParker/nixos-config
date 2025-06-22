@@ -18,10 +18,10 @@
       "space b": "workspace::ToggleLeftDock",
       "space p": "workspace::ToggleRightDock",
       "space enter": "workspace::ToggleBottomDock",
-      "ctrl-shift-l": "vim::ResizePaneRight",
-      "ctrl-shift-h": "vim::ResizePaneLeft",
-      "ctrl-shift-j": "vim::ResizePaneDown",
-      "ctrl-shift-k": "vim::ResizePaneUp",
+      "ctrl-shift-l": ["workspace::SendKeystrokes", "5 ctrl-w >"],
+      "ctrl-shift-h": ["workspace::SendKeystrokes", "5 ctrl-w <"],
+      "ctrl-shift-j": ["workspace::SendKeystrokes", "5 ctrl-w -"],
+      "ctrl-shift-k": ["workspace::SendKeystrokes", "5 ctrl-w +"],
       "ctrl-shift-backspace": "workspace::ToggleZoom"
     }
   },

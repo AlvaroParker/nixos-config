@@ -137,7 +137,6 @@
   "workbench.experimental.enableNewProfilesUI": true,
   "window.dialogStyle": "custom",
   "window.titleBarStyle": "custom",
-  "editor.minimap.enabled": false,
   "notebook.lineNumbers": "on",
   "editor.fontSize": 13,
   "workbench.iconTheme": "catppuccin-mocha",
