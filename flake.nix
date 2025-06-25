@@ -12,6 +12,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pwndbg.url = "github:pwndbg/pwndbg";
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
 
@@ -20,7 +22,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, lanzaboote, ... }@inputs:
+  outputs = { nixpkgs, home-manager, lanzaboote, pwndbg, ... }@inputs:
     let
       vars = import ./vars.nix;
       system = "x86_64-linux";

@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }:
+let pwndbg = inputs.pwndbg.packages.${pkgs.system}.default;
+in {
 
   home.packages = with pkgs; [
     nixfmt-classic
@@ -20,6 +22,8 @@
     google-chrome
     firefox-devedition
     firefox
+    github-desktop
+    pwndbg
   ];
   programs.zed-editor = { enable = true; };
   programs.vscode = { enable = true; };

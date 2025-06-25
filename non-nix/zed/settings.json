@@ -60,9 +60,9 @@
   "theme": "Catppuccin Macchiato - No Italics",
   "agent": {
     // "default_view": "text_thread",
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
-      "provider": "zed.dev",
+      "provider": "copilot_chat",
       "model": "claude-sonnet-4"
     },
     "version": "2"
@@ -75,13 +75,24 @@
   "tab_bar": {
     "show": true
   },
+  "title_bar": {
+    "show_branch_icon": false,
+    "show_branch_name": false,
+    "show_onboarding_banner": false,
+    "show_sign_in": false,
+    "show_user_picture": false,
+    "show_project_items": false
+  },
   "tabs": {
     "git_status": true,
     "file_icons": true
   },
   "terminal": {
     "dock": "bottom",
-    "default_height": 250
+    "default_height": 250,
+    "tab_bar": {
+      "show": "auto"
+    }
   },
   "languages": {
     "Python": {
@@ -109,7 +120,7 @@
       "tab_size": 4
     },
     "Rust": {
-      "show_edit_predictions": false
+      "show_edit_predictions": true
     },
     "C": {
       "formatter": {
@@ -151,7 +162,7 @@
     "scrollbar": {
       "show": "never"
     },
-    "hide_gitignore": true
+    "hide_gitignore": false
   },
   "lsp": {
     "nil": {

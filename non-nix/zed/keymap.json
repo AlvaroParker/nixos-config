@@ -8,11 +8,18 @@
     }
   },
   {
+    "context": "ProjectPanel",
+    "bindings": {
+      // "g c": "project_panel::DeployContextMenu"
+    }
+  },
+  {
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "space f": "project_panel::ToggleFocus",
       "space g": "git_panel::ToggleFocus",
       "space o": "outline_panel::ToggleFocus",
+      "g c": "editor::OpenContextMenu",
       "ctrl-shift-enter": "terminal_panel::ToggleFocus",
       "ctrl-shift-t": "workspace::NewTerminal",
       "space b": "workspace::ToggleLeftDock",
@@ -46,10 +53,10 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-w l": "agent::FocusRight",
-      "ctrl-w h": "agent::FocusLeft",
-      "ctrl-w j": "agent::FocusDown",
-      "ctrl-w k": "agent::FocusUp"
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w j": "workspace::ActivatePaneDown",
+      "ctrl-w k": "workspace::ActivatePaneUp"
     }
   }
 ]
