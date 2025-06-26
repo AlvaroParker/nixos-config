@@ -60,6 +60,8 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXOS_OZONE_WL = "1";
+    ANDROID_HOME = "$HOME/Android/Sdk";
+    PATH = "$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools";
   };
 
   programs.bash = {

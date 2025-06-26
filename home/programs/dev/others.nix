@@ -24,7 +24,11 @@ in {
     firefox
     github-desktop
     pwndbg
+    android-studio
+    watchman
   ];
+  nixpkgs.config.android_sdk.accept_license = true;
+
   programs.zed-editor = { enable = true; };
   programs.vscode = { enable = true; };
   programs.ripgrep = { enable = true; };
