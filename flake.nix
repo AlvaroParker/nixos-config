@@ -43,6 +43,7 @@
           ./system/${vars.hostname}
           home-manager.nixosModules.home-manager
           {
+            nixpkgs.config.android_sdk.accept_license = true;
             home-manager.useGlobalPkgs = true;
             home-manager.backupFileExtension = "backup";
             home-manager.useUserPackages = true;

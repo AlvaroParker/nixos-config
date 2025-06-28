@@ -26,9 +26,10 @@ in {
     pwndbg
     android-studio
     watchman
+    prismlauncher
   ];
-  nixpkgs.config.android_sdk.accept_license = true;
 
+  programs.jq = { enable = true; };
   programs.zed-editor = { enable = true; };
   programs.vscode = { enable = true; };
   programs.ripgrep = { enable = true; };
