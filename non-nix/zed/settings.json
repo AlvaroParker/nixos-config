@@ -60,13 +60,14 @@
   "theme": "Catppuccin Macchiato - No Italics",
   "agent": {
     // "default_view": "text_thread",
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
     },
     "version": "2"
   },
+
   "git": {
     "inline_blame": {
       "enabled": true
@@ -75,17 +76,10 @@
   "tab_bar": {
     "show": true
   },
-  "title_bar": {
-    "show_branch_icon": false,
-    "show_branch_name": false,
-    "show_onboarding_banner": false,
-    "show_sign_in": false,
-    "show_user_picture": false,
-    "show_project_items": false
-  },
   "tabs": {
     "git_status": true,
-    "file_icons": true
+    "file_icons": true,
+    "show_diagnostics": "all"
   },
   "terminal": {
     "dock": "bottom",
@@ -135,6 +129,7 @@
       "format_on_save": "on"
     },
     "C++": {
+      "show_edit_predictions": true,
       "formatter": {
         "external": {
           "command": "bash",
@@ -165,7 +160,7 @@
     "scrollbar": {
       "show": "never"
     },
-    "hide_gitignore": false
+    "hide_gitignore": true
   },
   "lsp": {
     "nil": {
