@@ -48,6 +48,20 @@
 
       # Configure the catppuccin plugin
       set -g @catppuccin_flavor "mocha"
+
+      setw -g mode-keys vi
+
+      # Easier pane navigation with Ctrl + h/j/k/l
+      bind -n C-h select-pane -L
+      bind -n C-j select-pane -D
+      bind -n C-k select-pane -U
+      bind -n C-l select-pane -R
+
+      # Resize panes using Vim-style keys
+      bind -r h resize-pane -L 5
+      bind -r j resize-pane -D 5
+      bind -r k resize-pane -U 5
+      bind -r l resize-pane -R 5
     '';
   };
 }
