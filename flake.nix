@@ -60,6 +60,8 @@
       devShells.${system} = {
         nodejs = import ./shells/nodejs.nix { inherit pkgs; };
         gcc = import ./shells/gcc.nix { inherit pkgs; };
+        libfprint = import ./shells/libfprint.nix { inherit pkgs; };
+        latex = import ./shells/latex.nix { inherit pkgs; };
       };
       formatter.${system} = pkgs.nixpkgs-fmt;
     };
