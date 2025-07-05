@@ -53,6 +53,7 @@
   environment.variables = {
     XKB_CONFIG_ROOT = "${pkgs.xkeyboard_config}/share/X11/xkb/";
   };
+  services.tailscale.enable = true;
 
   # Enable steam
   programs.steam = {
