@@ -37,11 +37,13 @@
       ]
     }
   ],
+
   "minimap": {
     "show": "always",
     "display_in": "active_editor",
     "thumb": "always"
   },
+
   "features": {
     "edit_prediction_provider": "copilot"
   },
@@ -57,14 +59,15 @@
   "edit_predictions": {
     "mode": "subtle"
   },
-  "theme": "Catppuccin Macchiato - No Italics",
+  "theme": "Catppuccin Mocha",
   "agent": {
     // "default_view": "text_thread",
+    "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
-    },
+    }
   },
 
   "git": {
@@ -86,6 +89,9 @@
     "tab_bar": {
       "show": "auto"
     }
+  },
+  "indent_guides": {
+    // "coloring": "disabled"
   },
   "languages": {
     "TSX": {
@@ -168,6 +174,11 @@
         "formatting": {
           "command": ["nixfmt"]
         }
+      }
+    },
+    "clangd": {
+      "binary": {
+        "arguments": ["--experimental-modules-support"]
       }
     },
     "rust-analyzer": {

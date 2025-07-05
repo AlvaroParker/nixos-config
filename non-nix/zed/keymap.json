@@ -48,6 +48,8 @@
       "ctrl-k h": "pane::SplitRight",
       "ctrl-k j": "pane::SplitDown",
       "ctrl-k k": "pane::SplitUp"
+      // "ctrl-tab": "pane::ActivateNextItem",
+      // "ctrl-shift-tab": "pane::ActivatePreviousItem"
     }
   },
   {
