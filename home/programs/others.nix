@@ -36,6 +36,9 @@
     mediainfo
     ueberzugpp
     exiftool
+
+    shellcheck
+    shfmt
   ];
 
   xdg.desktopEntries.discord-wayland = {
