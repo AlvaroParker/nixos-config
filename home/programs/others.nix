@@ -39,6 +39,8 @@
 
     shellcheck
     shfmt
+
+    snes9x
   ];
 
   xdg.desktopEntries.discord-wayland = {
