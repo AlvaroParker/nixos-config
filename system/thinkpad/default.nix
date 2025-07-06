@@ -1,6 +1,14 @@
 { pkgs, lib, ... }: {
   imports = [ ./hardware-configuration.nix ./../base.nix ];
 
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
+
   hardware.enableAllFirmware = true;
 
   environment.systemPackages = with pkgs; [ sbctl ];

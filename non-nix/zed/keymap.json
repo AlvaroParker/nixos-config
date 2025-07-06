@@ -5,6 +5,7 @@
       "ctrl-shift-enter": "terminal_panel::ToggleFocus",
       "ctrl-shift-t": "workspace::NewTerminal",
       "ctrl-shift-backspace": "workspace::ToggleZoom"
+      // "ctrl-p": ["task::Spawn",{ "task_name": "File Finder", "reveal_target": "center" }]
     }
   },
   {
@@ -30,6 +31,18 @@
       "ctrl-shift-j": ["workspace::SendKeystrokes", "5 ctrl-w -"],
       "ctrl-shift-k": ["workspace::SendKeystrokes", "5 ctrl-w +"],
       "ctrl-shift-backspace": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "bindings": {
+      "enter": "outline_panel::OpenSelectedEntry"
+    }
+  },
+  {
+    "context": "OutlinePanel && !not_editing",
+    "bindings": {
+      "enter": ["workspace::SendKeystrokes", "tab"]
     }
   },
   {

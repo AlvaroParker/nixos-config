@@ -57,7 +57,7 @@
   },
   "show_edit_predictions": true,
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "eager"
   },
   "theme": "Catppuccin Mocha",
   "agent": {

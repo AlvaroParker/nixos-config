@@ -42,6 +42,8 @@
 
     snes9x
     snes9x-gtk
+    dolphin-emu
+    authenticator
   ];
 
   xdg.desktopEntries.discord-wayland = {

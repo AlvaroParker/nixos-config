@@ -29,6 +29,9 @@ in {
     prismlauncher
   ];
 
+  programs.ssh = { enable = true; };
+  programs.television = { enable = true; };
+
   programs.jq = { enable = true; };
   programs.zed-editor = { enable = true; };
   programs.vscode = { enable = true; };
