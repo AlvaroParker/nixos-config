@@ -41,6 +41,7 @@
     shfmt
 
     snes9x
+    snes9x-gtk
   ];
 
   xdg.desktopEntries.discord-wayland = {
