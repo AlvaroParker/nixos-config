@@ -44,18 +44,33 @@
     snes9x-gtk
     dolphin-emu
     authenticator
+
+    obsidian
   ];
 
-  xdg.desktopEntries.discord-wayland = {
-    name = "Discord (Wayland)";
-    genericName = "Internet Messenger";
-    comment =
-      "All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.";
-    exec =
-      "/etc/profiles/per-user/parker/bin/discord --ozone-platform-hint=auto";
-    icon = "discord";
-    type = "Application";
-    categories = [ "Network" "InstantMessaging" ];
+  xdg.desktopEntries = {
+    discord-wayland = {
+      name = "Discord (Wayland)";
+      genericName = "Internet Messenger";
+      comment =
+        "All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.";
+      exec =
+        "/etc/profiles/per-user/parker/bin/discord --ozone-platform-hint=auto";
+      icon = "discord";
+      type = "Application";
+      categories = [ "Network" "InstantMessaging" ];
+    };
+
+    obsidian-wayland = {
+      categories = [ "Office" ];
+      comment = "Knowledge base";
+      exec =
+        "/etc/profiles/per-user/parker/bin/obsidian  --ozone-platform-hint=auto";
+      icon = "obsidian";
+      mimeType = [ "x-scheme-handler/obsidian" ];
+      name = "Obsidian (Wayland)";
+      type = "Application";
+    };
   };
 
   services.clipse.enable = true;
