@@ -33,7 +33,7 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit (vars)
-            username nickName email homeDirectory hostname timezone
+            username nickName email homeDirectory hostname timezone servers
             defaultLocale;
           inherit inputs;
         };

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }@args: {
   imports = [ ./hardware-configuration.nix ./../base.nix ];
 
   services.openssh = {
@@ -8,6 +8,8 @@
       PermitRootLogin = "no";
     };
   };
+
+  networking.hosts = args.servers;
 
   hardware.enableAllFirmware = true;
 

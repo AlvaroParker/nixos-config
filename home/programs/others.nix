@@ -46,6 +46,10 @@
     authenticator
 
     obsidian
+
+    ollama
+
+    check-jsonschema
   ];
 
   xdg.desktopEntries = {

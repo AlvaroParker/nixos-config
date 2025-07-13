@@ -10,4 +10,8 @@ rec {
   timezone = "America/Santiago";
   defaultLocale = "en_US.UTF-8";
   batteryName = "BAT0"; # Get it from `ls /sys/class/power_supply`
+  servers = {
+    "100.105.161.112" = [ "archserver" ];
+    "100.127.196.66" = [ "labserver" ];
+  };
 }

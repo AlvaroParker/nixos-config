@@ -38,6 +38,15 @@
           "paths": ["/home/parker/test_dir2"]
         }
       ]
+    },
+    {
+      "host": "100.127.196.66",
+      "username": "lab",
+      "projects": [
+        {
+          "paths": ["/home/lab/tesis"]
+        }
+      ]
     }
   ],
 
@@ -66,7 +75,7 @@
   "agent": {
     // "default_view": "text_thread",
     "always_allow_tool_actions": true,
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
@@ -97,6 +106,9 @@
     // "coloring": "disabled"
   },
   "languages": {
+    "Shell Script": {
+      "show_edit_predictions": true
+    },
     "TSX": {},
     "Python": {
       "language_servers": ["ruff", "pyright"],

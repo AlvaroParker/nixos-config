@@ -30,7 +30,10 @@
       "ctrl-shift-h": ["workspace::SendKeystrokes", "5 ctrl-w <"],
       "ctrl-shift-j": ["workspace::SendKeystrokes", "5 ctrl-w -"],
       "ctrl-shift-k": ["workspace::SendKeystrokes", "5 ctrl-w +"],
-      "ctrl-shift-backspace": "workspace::ToggleZoom"
+      "ctrl-shift-backspace": "workspace::ToggleZoom",
+
+      "shift-alt-k": "editor::AddSelectionAbove", // Insert Cursor Above
+      "shift-alt-j": "editor::AddSelectionBelow" // Insert Cursor Below
     }
   },
   {
