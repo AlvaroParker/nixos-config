@@ -1,7 +1,4 @@
 {
-  "ui_font_features": {
-    "calt": 0
-  },
   "ssh_connections": [
     {
       "host": "192.168.122.11",
@@ -54,6 +51,10 @@
     "show": "always",
     "display_in": "active_editor",
     "thumb": "always"
+  },
+
+  "active_pane_modifiers": {
+    // "border_size": 5
   },
 
   "features": {

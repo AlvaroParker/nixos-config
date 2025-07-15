@@ -50,6 +50,8 @@
     ollama
 
     check-jsonschema
+
+    perl
   ];
 
   xdg.desktopEntries = {

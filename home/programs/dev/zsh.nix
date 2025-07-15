@@ -43,6 +43,10 @@
       bindkey '^F' forward-char
       bindkey "^P" up-line-or-beginning-search
       bindkey "^N" down-line-or-beginning-search
+      # Source secrets file if it exists
+      if [[ -f ~/.secrets ]]; then
+        source ~/.secrets
+      fi
     '';
     oh-my-zsh = {
       enable = true;

@@ -175,6 +175,8 @@
 
     file
     nix-index
+
+    linuxPackages.perf
   ];
 
   virtualisation.spiceUSBRedirection.enable = true;
