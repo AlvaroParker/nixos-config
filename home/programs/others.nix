@@ -50,6 +50,8 @@
     check-jsonschema
     perl
 
+    unstable.claude-code
+
     jetbrains.clion
 
     caddy

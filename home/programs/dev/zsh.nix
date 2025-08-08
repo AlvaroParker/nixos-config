@@ -21,7 +21,8 @@
       sudo = "sudo -A";
       vim = "nvim";
       nixgc = "sudo nix-collect-garbage -d";
-      nixupdate = "(cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch)";
+      nixupdate =
+        "(cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch)";
     };
 
     sessionVariables = {

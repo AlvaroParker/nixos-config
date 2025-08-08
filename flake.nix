@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -29,6 +29,10 @@
       vars = import ./vars.nix;
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+      unstablePkgs = import unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in {
       nixosConfigurations.${vars.hostname} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -37,7 +41,7 @@
             username nickName email homeDirectory hostname timezone servers
             defaultLocale;
           inherit inputs;
-          unstable = inputs.unstable.legacyPackages.${system};
+          unstable = unstablePkgs;
         };
         modules = [
           lanzaboote.nixosModules.lanzaboote
@@ -55,7 +59,7 @@
                 username nickName fullName email homeDirectory ssh_public
                 batteryName;
               inherit inputs;
-              unstable = inputs.unstable.legacyPackages.${system};
+              unstable = unstablePkgs;
             };
           }
         ];

@@ -1,9 +1,7 @@
 {
   description = "Dev shell for Network Manager";
 
-  inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-25.05"; };
-  };
+  inputs = { nixpkgs = { url = "github:NixOS/nixpkgs/nixos-25.05"; }; };
 
   outputs = { nixpkgs, ... }: {
     devShells.x86_64-linux.default = let
@@ -37,9 +35,7 @@
         newt
         libnvme
         libxslt
-        (pkgs.python3.withPackages (python-pkgs: [
-          python-pkgs.pygobject3
-        ]))
+        (pkgs.python3.withPackages (python-pkgs: [ python-pkgs.pygobject3 ]))
         # Docs    meson
         gettext
         vala
@@ -73,13 +69,9 @@
         python3
       ];
 
-      packages = [
-        pkgs.nodejs
-        pkgs.ngrok
-      ];
+      packages = [ pkgs.nodejs pkgs.ngrok ];
 
-      shellHook = ''
-      '';
+      shellHook = "";
     };
   };
 }
