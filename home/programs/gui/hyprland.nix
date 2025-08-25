@@ -12,6 +12,18 @@
 
     unstable.hyprshade
   ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config = {
+      common = {
+        default = [ "hyprland" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.AppChooser" = [ "gtk" ];
+      };
+    };
+  };
   home.file.".config/hypr" = {
     source = ./config/hypr;
     recursive = true;

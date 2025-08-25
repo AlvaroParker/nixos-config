@@ -54,17 +54,16 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gnome
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     config = {
-      common = { default = [ "gtk" ]; };
-      hyprland = { default = [ "hyprland" "gtk" ]; };
-      gnome = { default = [ "gnome" "gtk" ]; };
+      common = {
+        default = [ "hyprland" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.AppChooser" = [ "gtk" ];
+      };
     };
   };
+
   systemd.services.wpa_supplicant.environment.OPENSSL_CONF =
     pkgs.writeText "openssl.cnf" ''
       openssl_conf = openssl_init
@@ -108,7 +107,6 @@
     simple-scan
     decibels
     snapshot
-    xdg-desktop-portal-gnome
     speechd
   ]);
 
@@ -162,10 +160,6 @@
 
     pciutils
     mlocate
-
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
 
     sof-firmware
 
