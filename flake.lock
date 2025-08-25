@@ -225,11 +225,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1756060587,
-        "narHash": "sha256-9bPcwsY8gdGTyx8Ir+h64r4v4NEbSLa7QvERD7E8RCE=",
+        "lastModified": 1756126564,
+        "narHash": "sha256-fvlf2CeckYX5aIErWOkDasWzta6rqJDh02DUbLdsC3Q=",
         "owner": "pwndbg",
         "repo": "pwndbg",
-        "rev": "6c5bb2294883d848ed5838038186c571ce7dedc2",
+        "rev": "e76db3fcddf19e38a107dfcbf5460a939a064589",
         "type": "github"
       },
       "original": {
@@ -368,11 +368,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1756073902,
-        "narHash": "sha256-c+nkNP2iK4BtNL9fkSgjO/ZQstfJKE0G6hanuTtGtf8=",
+        "lastModified": 1756096051,
+        "narHash": "sha256-TN/Go4OVmYrcZTtTysWb8iUpu8PdVeKaHR+aigPABiU=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "7c096513336dbff12d5e11e352148a676d042820",
+        "rev": "630f8c222fb8c5ecd4189fdb8553538f9acd4fd2",
         "type": "github"
       },
       "original": {
