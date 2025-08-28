@@ -15,16 +15,22 @@
     enable = true;
     shellAliases = {
       nv = "nvim";
+      droidcam-front =
+        "scrcpy --video-source=camera --camera-facing=front --camera-size=2560x1440 --video-codec=h264 --v4l2-sink=/dev/video10 --no-audio --no-video-playback";
+      droidcam-back =
+        "scrcpy --video-source=camera --camera-facing=back --camera-size=2560x1440 --video-codec=h264 --v4l2-sink=/dev/video10 --no-audio --no-video-playback";
       tree = "eza --icons=always --tree";
       ipinfo = "ip -br -c a";
       graph = "git log --oneline --graph --all --decorate";
       sudo = "sudo -A";
       vim = "nvim";
-      nixgc = "sudo nix-collect-garbage -d";
+      nixgc =
+        "(cd ~/nixos-config && sudo nix-collect-garbage -d && sudo nixos-rebuild switch --install-bootloader)";
       nixupgrade =
         "(cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch)";
       nixupdate = "(cd ~/nixos-config && sudo nixos-rebuild switch)";
       ports = "sudo netstat -tulpen";
+      open-dir = "nohup nautilus . > /dev/null 2>&1 &";
     };
 
     sessionVariables = {
