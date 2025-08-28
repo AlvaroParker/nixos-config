@@ -1,5 +1,12 @@
 { pkgs, ... }: {
-  imports = [ ./zsh.nix ./fastfetch.nix ./git.nix ./others.nix ./neovim.nix ];
+  imports = [
+    ./zsh.nix
+    ./fastfetch.nix
+    ./git.nix
+    ./others.nix
+    ./neovim.nix
+    ./starship.nix
+  ];
 
   programs.eza.enable = true;
 

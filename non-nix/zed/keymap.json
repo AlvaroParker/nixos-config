@@ -1,13 +1,13 @@
 [
   {
     "bindings": {
-      "ctrl-p": "menu::SelectPrevious"
+      "ctrl-p": "menu::SelectPrevious",
+      "ctrl-shift-enter": "terminal_panel::Toggle"
     }
   },
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-shift-enter": "terminal_panel::ToggleFocus",
       "ctrl-shift-t": "workspace::NewTerminal",
       "ctrl-shift-backspace": "workspace::ToggleZoom"
     }
@@ -21,13 +21,14 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "space k r": "repl::Run",
       "space m": "editor::ToggleMinimap",
       "space f": "project_panel::ToggleFocus",
       "space g": "git_panel::ToggleFocus",
       "space g s": "git::StashAll",
+      "space s": "git::ViewStash",
       "space g p": "git::StashPop",
       "space o": "outline_panel::ToggleFocus",
-      "ctrl-shift-enter": "terminal_panel::ToggleFocus",
       "ctrl-shift-t": "workspace::NewTerminal",
       "space b": "workspace::ToggleLeftDock",
       "space p": "workspace::ToggleRightDock",
@@ -52,9 +53,17 @@
     }
   },
   {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-\\": "pane::SplitAndMoveRight"
+    }
+  },
+  {
     "context": "Editor && VimControl",
     "bindings": {
-      "g c": "editor::OpenContextMenu"
+      "g c": "editor::OpenContextMenu",
+      "space t": "tab_switcher::ToggleAll",
+      "space d": "editor::ToggleSelectedDiffHunks"
     }
   },
   {
@@ -81,12 +90,22 @@
   {
     "context": "Pane",
     "bindings": {
-      "ctrl-k l": "pane::SplitRight",
-      "ctrl-k h": "pane::SplitRight",
-      "ctrl-k j": "pane::SplitDown",
-      "ctrl-k k": "pane::SplitUp"
-      // "ctrl-tab": "pane::ActivateNextItem",
-      // "ctrl-shift-tab": "pane::ActivatePreviousItem"
+      "ctrl-k l": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "right" }
+      ],
+      "ctrl-k h": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "left" }
+      ],
+      "ctrl-k j": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "down" }
+      ],
+      "ctrl-k k": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "up" }
+      ]
     }
   },
   {

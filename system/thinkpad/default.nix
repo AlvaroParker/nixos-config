@@ -19,7 +19,11 @@
 
   boot.initrd.kernelModules = [ "xe" ];
 
-  boot.kernelParams = [ "snd_hda_intel.dmic_detect=0" ];
+  boot.kernelParams = [
+    "snd_hda_intel.dmic_detect=0"
+    "i915.enable_psr=0"
+    "i915.enable_fbc=0" # Disable framebuffer compression
+  ];
 
   boot.extraModprobeConfig = ''
     options kvm_intel nested=1
@@ -41,7 +45,7 @@
 
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [ vpl-gpu-rt intel-media-driver ];
+    extraPackages = with pkgs; [ vpl-gpu-rt intel-media-driver libvdpau-va-gl ];
   };
 
   console.font = "ter-i32b";
@@ -72,16 +76,5 @@
   services.tailscale = {
     enable = true;
     package = unstable.tailscale;
-  };
-
-  # Enable steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall =
-      true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall =
-      true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall =
-      true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 }

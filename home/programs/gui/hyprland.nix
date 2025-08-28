@@ -111,9 +111,9 @@
       general = {
         no_border_on_floating = false;
         gaps_in = 2.5;
-        gaps_out = 10;
+        gaps_out = 5;
         # gaps_out = 2.5,2.5,2.5,2.5
-        border_size = 3;
+        border_size = 2;
 
         # Catppuccin Mocha - Use "Lavender" and "Blue" for gradient
         # col.active_border = rgba(b4befeFF) rgba(89b4faFF) 100deg
@@ -138,8 +138,10 @@
         };
       };
 
+      render = { new_render_scheduling = true; };
+
       decoration = {
-        rounding = 10;
+        rounding = 3;
         # multisample_edges=true
 
         active_opacity = 1.0;
@@ -182,10 +184,7 @@
         preserve_split = "yes";
       };
 
-      gestures = {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        workspace_swipe = "on";
-      };
+      gesture = [ "3, horizontal, workspace" ];
 
       env = [
         "XCURSOR_THEME,Bibata-Modern-Classic"

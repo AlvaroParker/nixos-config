@@ -37,8 +37,8 @@
       };
       memory = {
         interval = 30;
-        format = " {used}GiB";
-        format-alt = " {used:0.1f}G";
+        format = " {used}GiB";
+        format-alt = " {used:0.1f}G";
         max-length = 10;
       };
       "custom/window-name" = {

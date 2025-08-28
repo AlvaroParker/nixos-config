@@ -21,8 +21,6 @@ in {
       (python-pkgs: [ python-pkgs.pandas python-pkgs.requests ]))
 
     google-chrome
-    firefox-devedition
-    firefox
     github-desktop
     pwndbg
     android-studio
@@ -37,10 +35,30 @@ in {
 
     unstable.gleam
     erlang
+    beam27Packages.erlang-ls
+
+    deno
+    yarn
+
+    ruby
+    rbenv
+    solargraph
+
+    basedpyright
+    dua
+
+    unstable.sniffnet
   ];
 
+  programs.lazygit.enable = true;
   programs.ssh = { enable = true; };
   programs.television = { enable = true; };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
 
   programs.jq = { enable = true; };
   programs.vscode = { enable = true; };
@@ -50,4 +68,6 @@ in {
     enableZshIntegration = true;
     nix-direnv = { enable = true; };
   };
+
+  programs.nushell = { enable = true; };
 }

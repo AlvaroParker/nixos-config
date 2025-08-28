@@ -21,13 +21,12 @@
     obs-studio
     spotify
     inkscape
-    # minecraft
+
     authenticator
     wdisplays
     postman
     # ventoy # not trusted
     gdm-settings
-    protonvpn-gui
     scrcpy
 
     inputs.zen-browser.packages."${system}".default
@@ -40,9 +39,6 @@
     shellcheck
     shfmt
 
-    snes9x
-    snes9x-gtk
-    dolphin-emu
     authenticator
 
     obsidian
@@ -51,12 +47,14 @@
     perl
 
     unstable.claude-code
-
-    jetbrains.clion
+    unstable.gemini-cli
 
     caddy
     halloy
     scrcpy
+
+    brave
+    gnome-solanum
   ];
 
   xdg.desktopEntries = {
@@ -109,6 +107,8 @@
       };
     };
   };
+
+  programs.zellij = { enable = true; };
 
   programs.zathura = {
     enable = true;

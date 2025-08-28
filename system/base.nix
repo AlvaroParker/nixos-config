@@ -9,6 +9,11 @@
   boot = {
     loader.efi.canTouchEfiVariables = true;
     kernelPackages = pkgs.linuxPackages_latest;
+    extraModulePackages = with pkgs.linuxPackages_latest; [ v4l2loopback ];
+    kernelModules = [ "v4l2loopback" ];
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=10 card_label="scrcpy" exclusive_caps=1
+    '';
     plymouth = {
       enable = true;
       theme = "bgrt";
@@ -34,7 +39,13 @@
   networking.hostName = "${args.hostname}"; # Define your hostname.
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager = {
+      enable = true;
+      wifi = { powersave = false; };
+    };
+    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  };
 
   # Set your time zone.
   time.timeZone = args.timezone;
@@ -48,6 +59,11 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
     excludePackages = [ pkgs.xterm ];
+
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [ dmenu i3status i3blocks ];
+    };
   };
 
   # services.libinput = { enable = true; };
@@ -151,7 +167,6 @@
     vim
     wget
     btop
-    tmux
     killall
     gdb
     mesa
@@ -173,6 +188,9 @@
     linuxPackages.perf
     openssl
     pkg-config
+    wirelesstools
+
+    nushell
   ];
 
   virtualisation.spiceUSBRedirection.enable = true;
