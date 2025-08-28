@@ -138,6 +138,8 @@
         };
       };
 
+      render = { new_render_scheduling = true; };
+
       decoration = {
         rounding = 10;
         # multisample_edges=true
@@ -182,10 +184,7 @@
         preserve_split = "yes";
       };
 
-      gestures = {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        workspace_swipe = "on";
-      };
+      gesture = [ "3, horizontal, workspace" ];
 
       env = [
         "XCURSOR_THEME,Bibata-Modern-Classic"

@@ -23,30 +23,30 @@
           red = "#F38BA8";
           green = "#A6E3A1";
           yellow = "#F9E2AF";
-          blue = "#6C9EE6";  # Darker, more readable blue
+          blue = "#6C9EE6"; # Darker, more readable blue
           magenta = "#F5C2E7";
           cyan = "#94E2D5";
-          white = "#E6E9EF";  # Brighter, more readable white
+          white = "#E6E9EF"; # Brighter, more readable white
         };
         dim = {
           black = "#45475A";
           red = "#F38BA8";
           green = "#A6E3A1";
           yellow = "#F9E2AF";
-          blue = "#5A8BD4";  # Even darker blue for dim variant
+          blue = "#5A8BD4"; # Even darker blue for dim variant
           magenta = "#F5C2E7";
           cyan = "#94E2D5";
-          white = "#D4D7DD";  # Slightly dimmed white
+          white = "#D4D7DD"; # Slightly dimmed white
         };
         normal = {
           black = "#45475A";
           red = "#F38BA8";
           green = "#A6E3A1";
           yellow = "#F9E2AF";
-          blue = "#6C9EE6";  # Same as bright blue for consistency
+          blue = "#6C9EE6"; # Same as bright blue for consistency
           magenta = "#F5C2E7";
           cyan = "#94E2D5";
-          white = "#D4D7DD";  # Good contrast white for normal use
+          white = "#D4D7DD"; # Good contrast white for normal use
         };
         primary = {
           background = "#1E1E2E";
