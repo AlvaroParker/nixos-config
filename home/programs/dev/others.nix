@@ -21,8 +21,6 @@ in {
       (python-pkgs: [ python-pkgs.pandas python-pkgs.requests ]))
 
     google-chrome
-    firefox-devedition
-    firefox
     github-desktop
     pwndbg
     android-studio
@@ -37,6 +35,10 @@ in {
 
     unstable.gleam
     erlang
+    beam27Packages.erlang-ls
+
+    deno
+    yarn
   ];
 
   programs.ssh = { enable = true; };

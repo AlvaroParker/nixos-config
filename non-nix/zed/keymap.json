@@ -21,10 +21,12 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "space k r": "repl::Run",
       "space m": "editor::ToggleMinimap",
       "space f": "project_panel::ToggleFocus",
       "space g": "git_panel::ToggleFocus",
       "space g s": "git::StashAll",
+      "space s": "git::ViewStash",
       "space g p": "git::StashPop",
       "space o": "outline_panel::ToggleFocus",
       "ctrl-shift-enter": "terminal_panel::ToggleFocus",
@@ -52,9 +54,17 @@
     }
   },
   {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-\\": "pane::SplitAndMoveRight"
+    }
+  },
+  {
     "context": "Editor && VimControl",
     "bindings": {
-      "g c": "editor::OpenContextMenu"
+      "g c": "editor::OpenContextMenu",
+      "space t": "tab_switcher::ToggleAll",
+      "space d": "editor::ToggleSelectedDiffHunks"
     }
   },
   {
@@ -82,7 +92,7 @@
     "context": "Pane",
     "bindings": {
       "ctrl-k l": "pane::SplitRight",
-      "ctrl-k h": "pane::SplitRight",
+      "ctrl-k h": "pane::SplitLeft",
       "ctrl-k j": "pane::SplitDown",
       "ctrl-k k": "pane::SplitUp"
       // "ctrl-tab": "pane::ActivateNextItem",
