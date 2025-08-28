@@ -37,6 +37,9 @@ in {
 
     unstable.gleam
     erlang
+    beam27Packages.erlang-ls
+
+    deno
   ];
 
   programs.ssh = { enable = true; };

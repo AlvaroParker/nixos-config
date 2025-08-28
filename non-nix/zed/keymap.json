@@ -21,6 +21,7 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "space k r": "repl::Run",
       "space m": "editor::ToggleMinimap",
       "space f": "project_panel::ToggleFocus",
       "space g": "git_panel::ToggleFocus",
@@ -54,7 +55,8 @@
   {
     "context": "Editor && VimControl",
     "bindings": {
-      "g c": "editor::OpenContextMenu"
+      "g c": "editor::OpenContextMenu",
+      "space t": "tab_switcher::ToggleAll"
     }
   },
   {

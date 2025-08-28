@@ -20,7 +20,7 @@
       graph = "git log --oneline --graph --all --decorate";
       sudo = "sudo -A";
       vim = "nvim";
-      nixgc = "sudo nix-collect-garbage -d";
+      nixgc = "(cd ~/nixos-config && sudo nix-collect-garbage -d && sudo nixos-rebuild switch --install-bootloader)";
       nixupgrade =
         "(cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch)";
       nixupdate = "(cd ~/nixos-config && sudo nixos-rebuild switch)";
