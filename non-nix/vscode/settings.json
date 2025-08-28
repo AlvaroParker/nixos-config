@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "Berkeley Mono",
   "explorer.confirmDelete": false,
   "terminal.integrated.cursorStyle": "line",
   "git.confirmSync": false,
@@ -135,7 +135,6 @@
   "window.dialogStyle": "custom",
   "window.titleBarStyle": "custom",
   "notebook.lineNumbers": "on",
-  "editor.fontSize": 13,
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.productIconTheme": "material-product-icons",
   "cmake.pinnedCommands": [
@@ -151,5 +150,7 @@
   "chat.editor.fontFamily": "FiraCode Nerd Font",
   "debug.console.fontFamily": "FiraCode Nerd Font",
   "workbench.colorTheme": "Catppuccin Mocha",
-  "zenMode.showTabs": "none"
+  "zenMode.showTabs": "none",
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on"
 }
