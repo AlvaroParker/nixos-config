@@ -37,6 +37,7 @@
       "ctrl-shift-h": ["workspace::SendKeystrokes", "5 ctrl-w <"],
       "ctrl-shift-j": ["workspace::SendKeystrokes", "5 ctrl-w -"],
       "ctrl-shift-k": ["workspace::SendKeystrokes", "5 ctrl-w +"],
+      "space a": "assistant::InlineAssist",
 
       "shift-alt-k": "editor::AddSelectionAbove", // Insert Cursor Above
       "shift-alt-j": "editor::AddSelectionBelow", // Insert Cursor Below
@@ -50,6 +51,12 @@
       //   "workspace::SendKeystrokes",
       //   "ctrl-shift-backspace ctrl-w l ctrl-shift-backspace"
       // ]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space a": "assistant::InlineAssist"
     }
   },
   {
@@ -123,6 +130,12 @@
       "space a": "agent::ToggleContextPicker",
       "space m": "agent::ToggleModelSelector",
       "space t": "agent::ToggleProfileSelector"
+    }
+  },
+  {
+    "context": "StashDiff > Editor",
+    "bindings": {
+      "ctrl-shift-d": "git::DropCurrentStash"
     }
   }
 ]

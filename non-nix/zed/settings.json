@@ -1,5 +1,5 @@
 {
-  "ui_font_weight": 510.0,
+  "ui_font_weight": 500.0,
   "confirm_quit": false,
   "redact_private_values": false,
   "zoomed_padding": false,
@@ -156,7 +156,7 @@
     // "panel.background": "#00000000",
     // "background": "#ffffff"
   },
-  "theme": "Duskfox - opaque",
+  "theme": "Catppuccin Mocha",
   "toolbar": {
     "breadcrumbs": true,
     "quick_actions": true
@@ -165,12 +165,11 @@
     // "default_view": "text_thread",
     "use_modifier_to_send": false,
     "play_sound_when_agent_done": false,
-    "always_allow_tool_actions": false,
-    "notify_when_agent_waiting": "all_screens",
-    "default_profile": "ask",
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-sonnet-4"
     }
   },
 
@@ -281,7 +280,7 @@
     "scrollbar": {
       "show": "never"
     },
-    "hide_gitignore": true
+    "hide_gitignore": false
   },
   "lsp": {
     "rust-analyzer": {

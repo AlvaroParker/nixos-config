@@ -78,7 +78,7 @@
       monitor = [
         "desc:Samsung Electric Company LS27C33xG H9TX400275, 1920x1080@100, auto, 1"
         " , preferred, auto, 1"
-        "eDP-1, 3072x1920@120, 0x0,2, vrr, 1"
+        "eDP-1, 3072x1920@120, 0x0,2, vrr, 0"
         "Virtual-1,1920x1080,auto,1"
       ];
       bindl = [
@@ -141,7 +141,7 @@
       render = { new_render_scheduling = true; };
 
       decoration = {
-        rounding = 3;
+        rounding = 5;
         # multisample_edges=true
 
         active_opacity = 1.0;
